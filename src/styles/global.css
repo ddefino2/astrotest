@@ -86,7 +86,8 @@ img {
 .site-main,
 .section,
 .hero,
-.footer-note {
+.footer-note,
+.site-marquee {
 	position: relative;
 	z-index: 1;
 }
@@ -172,6 +173,23 @@ img {
 	width: min(calc(100% - 2rem), var(--container));
 	margin: 0 auto;
 	padding: 2rem 0 4rem;
+}
+
+.site-marquee {
+	width: min(calc(100% - 2rem), var(--container));
+	margin: 1.25rem auto 0;
+	border: 1px solid var(--border);
+	border-radius: 34px;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.03);
+	box-shadow: var(--shadow);
+}
+
+.site-marquee img {
+	width: 100%;
+	max-height: 22rem;
+	object-fit: cover;
+	object-position: center;
 }
 
 .hero {
