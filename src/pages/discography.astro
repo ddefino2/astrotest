@@ -1,102 +1,58 @@
 ---
-import '../styles/global.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const albums = [
+	{ title: 'Candy Shop', year: 1955, cover: '/album-covers/Dean-Tool-candy-shop.jpg' },
+	{ title: 'Knuckle', year: 1962, cover: '/album-covers/Dean-tool-knuckle.jpg' },
+	{ title: 'Give It Away', year: 1968, cover: '/album-covers/Dean-Tool-give-it-away.jpg' },
+	{ title: 'Many Gumbas', year: 1971, cover: '/album-covers/Dean-tool-many-gumbas.jpeg' },
+	{ title: 'Natural Born Killa', year: 1975, cover: '/album-covers/Dean-Tool-natural-born-killa.jpg' },
+	{ title: 'Puttana Closer', year: 1980, cover: '/album-covers/Puttana-closer-dean-tool.jpg' },
+	{ title: 'Sings the Standards', year: 1985, cover: '/album-covers/Dean-Tool-sings-the-standards.jpg' },
+	{ title: 'Dames', year: 1990, cover: '/album-covers/dean-tool-dames.jpg' },
+	{ title: 'Wack That A', year: 1995, cover: '/album-covers/Dean-tool-Wack-That-A.jpg' },
+	{ title: 'Wack That B', year: 1996, cover: '/album-covers/Dean-tool-Wack-That-B.jpg' },
+	{ title: 'Spaghetti Pot', year: 2000, cover: '/album-covers/dean-tool-spaghetti-pot.jpg' },
+	{ title: 'I Wanna Fuck You', year: 2005, cover: '/album-covers/i-wanna-fuck-you-dean-tool.jpg' },
+	{ title: 'I Wanna Wack You', year: 2010, cover: '/album-covers/i-wanna-wack-you-dean-tool.jpg' },
+	{ title: 'Angel of Death', year: 2015, cover: '/album-covers/Dean-tool-angel-of-death_.jpg' },
+	{ title: 'Horny', year: 2020, cover: '/album-covers/Dean-tool-horny.jpg' }
+];
 ---
 
-<html lang="en" class="h-full">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Dean Tool - Discography</title>
-	</head>
-	<body class="min-h-screen bg-gray-900 text-white">
-		<header class="text-center py-8">
-			<h1 class="text-4xl font-bold text-yellow-400 mb-4">Dean Tool - Discography</h1>
-			<nav class="flex justify-center space-x-6">
-				<a href="/" class="text-yellow-400 hover:text-yellow-300 transition">Home</a>
-				<a href="/about" class="text-yellow-400 hover:text-yellow-300 transition">About</a>
-			</nav>
-		</header>
-		<main class="px-4 py-8">
-			<div class="max-w-6xl mx-auto">
-				<h2 class="text-3xl font-semibold mb-8 text-center">Albums</h2>
-				<div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-Tool-candy-shop.jpg" alt="Candy Shop" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Candy Shop</h3>
-						<p class="text-gray-300">Year: 1955</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-tool-knuckle.jpg" alt="Knuckle" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Knuckle</h3>
-						<p class="text-gray-300">Year: 1962</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-Tool-give-it-away.jpg" alt="Give It Away" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Give It Away</h3>
-						<p class="text-gray-300">Year: 1968</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-tool-many-gumbas.jpeg" alt="Many Gumbas" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Many Gumbas</h3>
-						<p class="text-gray-300">Year: 1971</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-Tool-natural-born-killa.jpg" alt="Natural Born Killa" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Natural Born Killa</h3>
-						<p class="text-gray-300">Year: 1975</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Puttana-closer-dean-tool.jpg" alt="Puttana Closer" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Puttana Closer</h3>
-						<p class="text-gray-300">Year: 1980</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-Tool-sings-the-standards.jpg" alt="Sings the Standards" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Sings the Standards</h3>
-						<p class="text-gray-300">Year: 1985</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/dean-tool-dames.jpg" alt="Dames" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Dames</h3>
-						<p class="text-gray-300">Year: 1990</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-tool-Wack-That-A.jpg" alt="Wack That A" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Wack That A</h3>
-						<p class="text-gray-300">Year: 1995</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-tool-Wack-That-B.jpg" alt="Wack That B" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Wack That B</h3>
-						<p class="text-gray-300">Year: 1996</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/dean-tool-spaghetti-pot.jpg" alt="Spaghetti Pot" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Spaghetti Pot</h3>
-						<p class="text-gray-300">Year: 2000</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/i-wanna-fuck-you-dean-tool.jpg" alt="I Wanna Fuck You" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">I Wanna Fuck You</h3>
-						<p class="text-gray-300">Year: 2005</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/i-wanna-wack-you-dean-tool.jpg" alt="I Wanna Wack You" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">I Wanna Wack You</h3>
-						<p class="text-gray-300">Year: 2010</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-tool-angel-of-death_.jpg" alt="Angel of Death" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Angel of Death</h3>
-						<p class="text-gray-300">Year: 2015</p>
-					</div>
-					<div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105">
-						<img src="/album-covers/Dean-tool-horny.jpg" alt="Horny" class="w-full h-48 object-cover rounded mb-4">
-						<h3 class="text-lg font-bold text-yellow-400 mb-2">Horny</h3>
-						<p class="text-gray-300">Year: 2020</p>
-					</div>
+<SiteLayout
+	title="Dean Tool Discography"
+	description="The records, covers, and catalog of Dean Tool."
+	active="discography"
+>
+	<section class="section">
+		<div class="section-panel">
+			<div class="section-heading">
+				<div>
+					<span class="eyebrow">Discography</span>
+					<h1 class="section-title">A catalog with teeth.</h1>
 				</div>
+				<p class="section-copy">
+					From lounge classics to darker late-career records, the catalog moves through romance,
+					sinister wit, and polished chaos.
+				</p>
 			</div>
-		</main>
-	</body>
-</html>
+			<div class="album-grid">
+				{
+					albums.map((album) => (
+						<article class="album-card">
+							<div class="album-cover">
+								<img src={album.cover} alt={album.title} loading="lazy" />
+							</div>
+							<div class="album-body">
+								<div class="album-year">{album.year}</div>
+								<h2 class="card-title">{album.title}</h2>
+								<p class="album-meta">Studio release</p>
+							</div>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</SiteLayout>

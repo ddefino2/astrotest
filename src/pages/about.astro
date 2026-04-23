@@ -1,27 +1,61 @@
 ---
-import '../styles/global.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
 ---
 
-<html lang="en" class="h-full">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Dean Tool - About</title>
-	</head>
-	<body class="min-h-screen bg-gray-900 text-white flex flex-col">
-		<header class="text-center py-8">
-			<h1 class="text-4xl font-bold text-yellow-400 mb-4">Dean Tool - About</h1>
-			<nav class="flex justify-center space-x-6">
-				<a href="/" class="text-yellow-400 hover:text-yellow-300 transition">Home</a>
-				<a href="/tour" class="text-yellow-400 hover:text-yellow-300 transition">Tour</a>
-				<a href="/discography" class="text-yellow-400 hover:text-yellow-300 transition">Discography</a>
-			</nav>
-		</header>
-		<main class="flex-grow flex items-center justify-center px-4">
-			<div class="max-w-2xl text-center">
-				<h2 class="text-3xl font-semibold mb-6">About Me</h2>
-				<p class="text-lg leading-relaxed">Coming Soon</p>
+<SiteLayout
+	title="About Dean Tool"
+	description="Learn the story behind Dean Tool's dark lounge sound and stage persona."
+	active="about"
+>
+	<section class="section">
+		<div class="story-grid">
+			<article class="bio-card">
+				<span class="eyebrow">The Story</span>
+				<h1 class="display-title">A voice built for velvet rooms and dangerous timing.</h1>
+				<p class="muted">
+					Dean Tool came up through dim jazz basements, after-hours radio sets, and stages where the
+					crowd wanted elegance with a little trouble in it. The sound still carries that tension:
+					classic phrasing, modern edge, and arrangements that never stay polite for long.
+				</p>
+				<p class="muted">
+					Across decades of records, Dean has moved from smoky standards into bolder, stranger material
+					without losing the core identity. The suit got sharper. The rooms got darker. The songs got
+					better.
+				</p>
+			</article>
+			<aside class="quote-card">
+				<span class="eyebrow">Artist Statement</span>
+				<blockquote>"Make it elegant first. Make it unforgettable second. Make it dangerous third."</blockquote>
+				<p>
+					That balance shapes the whole project: romance, swagger, and just enough shadow to keep the
+					audience leaning in.
+				</p>
+			</aside>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section-panel">
+			<div class="section-heading">
+				<div>
+					<span class="eyebrow">What Defines The Sound</span>
+					<h2 class="section-title">Classic craft with a modern silhouette.</h2>
+				</div>
 			</div>
-		</main>
-	</body>
-</html>
+			<div class="stats-grid">
+				<div class="stat-card">
+					<strong>Jazz</strong>
+					<span>Roomy arrangements, brass warmth, and a slow-burn pulse.</span>
+				</div>
+				<div class="stat-card">
+					<strong>Soul</strong>
+					<span>Melodic phrasing that lands heavy without needing to shout.</span>
+				</div>
+				<div class="stat-card">
+					<strong>Noir</strong>
+					<span>Visuals and moods pulled from midnight streets and stage light.</span>
+				</div>
+			</div>
+		</div>
+	</section>
+</SiteLayout>

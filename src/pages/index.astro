@@ -1,31 +1,142 @@
 ---
-import '../styles/global.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const stats = [
+	{ value: '14', label: 'Improperly seductive test singles' },
+	{ value: '3', label: 'Fake scandals survived this quarter' },
+	{ value: '1', label: 'Crooner persona too smooth for QA' }
+];
+
+const shows = [
+	{ date: 'May 15, 2026', venue: 'The Blue Note', city: 'New York, NY' },
+	{ date: 'June 3, 2026', venue: 'Jazz Alley', city: 'Seattle, WA' },
+	{ date: 'July 12, 2026', venue: 'Village Vanguard', city: 'New York, NY' }
+];
+
+const quotes = [
+	{
+		quote: '“A lounge act engineered in a lab to make HR nervous.”',
+		source: 'Fictional Sound Weekly'
+	},
+	{
+		quote: '“If satire wore a tuxedo and demanded a spotlight.”',
+		source: 'The Midnight Trade Journal'
+	},
+	{
+		quote: '“Shockingly elegant for a man singing obviously terrible ideas.”',
+		source: 'Velvet Static Magazine'
+	}
+];
 ---
 
-<html lang="en" class="h-full">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Dean Tool - Crooner Extraordinaire</title>
-	</head>
-	<body class="min-h-screen bg-gray-900 text-white flex flex-col">
-		<header class="text-center py-12">
-			<h1 class="text-5xl font-bold text-yellow-400 mb-4">Dean Tool</h1>
-			<p class="text-xl text-gray-300">The smoothest crooner this side of the Atlantic</p>
-		</header>
-		<nav class="flex justify-center space-x-8 mb-12">
-			<a href="/tour" class="text-yellow-400 hover:text-yellow-300 transition">Tour Dates</a>
-			<a href="/discography" class="text-yellow-400 hover:text-yellow-300 transition">Discography</a>
-			<a href="/about" class="text-yellow-400 hover:text-yellow-300 transition">About</a>
-		</nav>
-		<main class="flex-grow flex items-center justify-center px-4">
-			<div class="max-w-2xl text-center">
-				<h2 class="text-3xl font-semibold mb-6">About Dean Tool</h2>
-				<p class="text-lg leading-relaxed">Dean Tool is a legendary crooner known for his velvety voice and timeless melodies. From the smoky jazz clubs of the 1940s to modern stages, Dean has been captivating audiences with his unique blend of swing, blues, and a touch of mystery.</p>
+<SiteLayout
+	title="Dean Tool | Crooner Extraordinaire"
+	description="A modern artist website for Dean Tool with tour dates, records, and midnight-soul atmosphere."
+	active="home"
+>
+	<section class="hero">
+		<div class="hero-panel">
+			<span class="eyebrow">Fictional Crooner. Very real commitment to the bit.</span>
+			<h1 class="hero-title">Dean Tool</h1>
+			<p class="hero-subtitle">
+				A deliberately overdramatic artist site for a made-up lounge menace born from raunchy lyrics,
+				too much swagger, and a suspiciously expensive tuxedo budget.
+			</p>
+			<div class="hero-actions">
+				<a class="button" href="/tour">See The Tour</a>
+				<a class="button-secondary" href="/discography">Explore The Records</a>
 			</div>
-		</main>
-	</body>
-</html>
+		</div>
+		<div class="hero-stack">
+			<div class="feature-card feature-art">
+				<div>
+					<span class="feature-kicker">Featured Release</span>
+					<strong>Angel of Death</strong>
+					<p>All the sincerity of a classic crooner, aimed directly at the least classy lyrics imaginable.</p>
+				</div>
+			</div>
+			<div class="feature-card portrait-panel">
+				<img src="/dean-tool-stage.png" alt="Dean Tool in a tuxedo under dramatic stage light." />
+				<div class="portrait-caption">
+					<span class="feature-kicker">Publicity Shot</span>
+					<strong>The voice. The glare. The completely fabricated legacy.</strong>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section-panel">
+			<div class="section-heading">
+				<div>
+					<span class="eyebrow">At A Glance</span>
+					<h2 class="section-title">Built for the after-hours crowd.</h2>
+				</div>
+				<p class="section-copy">
+					The sound sits somewhere between classic lounge, bruised jazz, and theatrical swagger.
+					Everything about the site now leans into that world.
+				</p>
+			</div>
+			<div class="stats-grid">
+				{
+					stats.map((stat) => (
+						<div class="stat-card">
+							<strong>{stat.value}</strong>
+							<span>{stat.label}</span>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section-panel">
+			<div class="section-heading">
+				<div>
+					<span class="eyebrow">Upcoming Dates</span>
+					<h2 class="section-title">Catch the room before the lights come up.</h2>
+				</div>
+				<a class="button-secondary" href="/tour">Full Schedule</a>
+			</div>
+			<div class="show-grid">
+				{
+					shows.map((show) => (
+						<article class="show-card">
+							<div class="show-date">{show.date}</div>
+							<h3 class="card-title">{show.venue}</h3>
+							<p class="card-copy">{show.city}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section-panel">
+			<div class="section-heading">
+				<div>
+					<span class="eyebrow">Why This Exists</span>
+					<h2 class="section-title">A fake legend with immaculate production values.</h2>
+				</div>
+				<p class="section-copy">
+					Dean Tool is the joke played completely straight: silky arrangements, ridiculous song premises,
+					and branding that acts like this man headlined Vegas for forty years.
+				</p>
+			</div>
+			<div class="press-grid">
+				{
+					quotes.map((item) => (
+						<article class="press-card">
+							<blockquote>{item.quote}</blockquote>
+							<p>{item.source}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<p class="footer-note">Official artist site. Tailored for dark rooms and expensive speakers.</p>
+</SiteLayout>

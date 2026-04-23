@@ -1,47 +1,44 @@
 ---
-import '../styles/global.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const shows = [
+	{ date: 'May 15, 2026', venue: 'The Blue Note', city: 'New York, NY', note: 'An intimate opening-night set.' },
+	{ date: 'June 3, 2026', venue: 'Jazz Alley', city: 'Seattle, WA', note: 'Late show with expanded brass section.' },
+	{ date: 'July 12, 2026', venue: 'Village Vanguard', city: 'New York, NY', note: 'Midnight arrangements and deep cuts.' },
+	{ date: 'August 20, 2026', venue: "Yoshi's Oakland", city: 'Oakland, CA', note: 'West coast stop with stripped-back set design.' },
+	{ date: 'September 5, 2026', venue: 'The Dakota', city: 'Minneapolis, MN', note: 'Closing weekend with a long encore.' }
+];
 ---
 
-<html lang="en" class="h-full">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Dean Tool - Tour Dates</title>
-	</head>
-	<body class="min-h-screen bg-gray-900 text-white">
-		<header class="text-center py-8">
-			<h1 class="text-4xl font-bold text-yellow-400 mb-4">Dean Tool - Tour Dates</h1>
-			<nav class="flex justify-center space-x-6">
-				<a href="/" class="text-yellow-400 hover:text-yellow-300 transition">Home</a>
-				<a href="/about" class="text-yellow-400 hover:text-yellow-300 transition">About</a>
-			</nav>
-		</header>
-		<main class="px-4 py-8">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-semibold mb-8 text-center">Upcoming Shows</h2>
-				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-						<h3 class="text-xl font-bold text-yellow-400 mb-2">May 15, 2026</h3>
-						<p class="text-gray-300">The Blue Note, New York, NY</p>
-					</div>
-					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-						<h3 class="text-xl font-bold text-yellow-400 mb-2">June 3, 2026</h3>
-						<p class="text-gray-300">Jazz Alley, Seattle, WA</p>
-					</div>
-					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-						<h3 class="text-xl font-bold text-yellow-400 mb-2">July 12, 2026</h3>
-						<p class="text-gray-300">The Village Vanguard, New York, NY</p>
-					</div>
-					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-						<h3 class="text-xl font-bold text-yellow-400 mb-2">August 20, 2026</h3>
-						<p class="text-gray-300">Yoshi's Oakland, Oakland, CA</p>
-					</div>
-					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-						<h3 class="text-xl font-bold text-yellow-400 mb-2">September 5, 2026</h3>
-						<p class="text-gray-300">The Dakota, Minneapolis, MN</p>
-					</div>
+<SiteLayout
+	title="Dean Tool Tour Dates"
+	description="Upcoming live dates for Dean Tool."
+	active="tour"
+>
+	<section class="section">
+		<div class="section-panel">
+			<div class="section-heading">
+				<div>
+					<span class="eyebrow">Live Dates</span>
+					<h1 class="section-title">The midnight circuit.</h1>
 				</div>
+				<p class="section-copy">
+					A run of rooms selected for atmosphere first. Expect warm light, sharp tailoring, and a set
+					that gets heavier as the night goes on.
+				</p>
 			</div>
-		</main>
-	</body>
-</html>
+			<div class="show-grid">
+				{
+					shows.map((show) => (
+						<article class="show-card">
+							<div class="show-date">{show.date}</div>
+							<h2 class="card-title">{show.venue}</h2>
+							<p class="card-copy">{show.city}</p>
+							<p class="muted">{show.note}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</SiteLayout>
