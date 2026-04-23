@@ -1,27 +1,47 @@
 ---
-
+import '../styles/global.css';
 ---
 
-<html lang="en">
+<html lang="en" class="h-full">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>Dean Tool - Tour Dates</title>
 	</head>
-	<body>
-		<header>
-			<h1>Dean Tool - Tour Dates</h1>
-			<a href="/">Home</a> | <a href="/about">About</a>
+	<body class="min-h-screen bg-gray-900 text-white">
+		<header class="text-center py-8">
+			<h1 class="text-4xl font-bold text-yellow-400 mb-4">Dean Tool - Tour Dates</h1>
+			<nav class="flex justify-center space-x-6">
+				<a href="/" class="text-yellow-400 hover:text-yellow-300 transition">Home</a>
+				<a href="/about" class="text-yellow-400 hover:text-yellow-300 transition">About</a>
+			</nav>
 		</header>
-		<main>
-			<h2>Upcoming Shows</h2>
-			<ul>
-				<li><strong>May 15, 2026</strong> - The Blue Note, New York, NY</li>
-				<li><strong>June 3, 2026</strong> - Jazz Alley, Seattle, WA</li>
-				<li><strong>July 12, 2026</strong> - The Village Vanguard, New York, NY</li>
-				<li><strong>August 20, 2026</strong> - Yoshi's Oakland, Oakland, CA</li>
-				<li><strong>September 5, 2026</strong> - The Dakota, Minneapolis, MN</li>
-			</ul>
+		<main class="px-4 py-8">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-semibold mb-8 text-center">Upcoming Shows</h2>
+				<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+						<h3 class="text-xl font-bold text-yellow-400 mb-2">May 15, 2026</h3>
+						<p class="text-gray-300">The Blue Note, New York, NY</p>
+					</div>
+					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+						<h3 class="text-xl font-bold text-yellow-400 mb-2">June 3, 2026</h3>
+						<p class="text-gray-300">Jazz Alley, Seattle, WA</p>
+					</div>
+					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+						<h3 class="text-xl font-bold text-yellow-400 mb-2">July 12, 2026</h3>
+						<p class="text-gray-300">The Village Vanguard, New York, NY</p>
+					</div>
+					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+						<h3 class="text-xl font-bold text-yellow-400 mb-2">August 20, 2026</h3>
+						<p class="text-gray-300">Yoshi's Oakland, Oakland, CA</p>
+					</div>
+					<div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+						<h3 class="text-xl font-bold text-yellow-400 mb-2">September 5, 2026</h3>
+						<p class="text-gray-300">The Dakota, Minneapolis, MN</p>
+					</div>
+				</div>
+			</div>
 		</main>
 	</body>
 </html>

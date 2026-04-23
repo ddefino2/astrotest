@@ -1,8 +1,8 @@
 ---
-
+import '../styles/global.css';
 ---
 
-<html lang="en">
+<html lang="en" class="h-full">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -11,19 +11,21 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Dean Tool - Crooner Extraordinaire</title>
 	</head>
-	<body>
-		<header>
-			<h1>Dean Tool</h1>
-			<p>The smoothest crooner this side of the Atlantic</p>
+	<body class="min-h-screen bg-gray-900 text-white flex flex-col">
+		<header class="text-center py-12">
+			<h1 class="text-5xl font-bold text-yellow-400 mb-4">Dean Tool</h1>
+			<p class="text-xl text-gray-300">The smoothest crooner this side of the Atlantic</p>
 		</header>
-		<nav>
-			<a href="/tour">Tour Dates</a> | 
-			<a href="/discography">Discography</a> |
-			<a href="/about">About</a>
+		<nav class="flex justify-center space-x-8 mb-12">
+			<a href="/tour" class="text-yellow-400 hover:text-yellow-300 transition">Tour Dates</a>
+			<a href="/discography" class="text-yellow-400 hover:text-yellow-300 transition">Discography</a>
+			<a href="/about" class="text-yellow-400 hover:text-yellow-300 transition">About</a>
 		</nav>
-		<main>
-			<h2>About Dean Tool</h2>
-			<p>Dean Tool is a legendary crooner known for his velvety voice and timeless melodies. From the smoky jazz clubs of the 1940s to modern stages, Dean has been captivating audiences with his unique blend of swing, blues, and a touch of mystery.</p>
+		<main class="flex-grow flex items-center justify-center px-4">
+			<div class="max-w-2xl text-center">
+				<h2 class="text-3xl font-semibold mb-6">About Dean Tool</h2>
+				<p class="text-lg leading-relaxed">Dean Tool is a legendary crooner known for his velvety voice and timeless melodies. From the smoky jazz clubs of the 1940s to modern stages, Dean has been captivating audiences with his unique blend of swing, blues, and a touch of mystery.</p>
+			</div>
 		</main>
 	</body>
 </html>
